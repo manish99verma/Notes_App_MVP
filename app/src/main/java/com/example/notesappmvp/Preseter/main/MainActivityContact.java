@@ -10,6 +10,6 @@ public interface MainActivityContact {
     interface Presenter {
         LiveData<List<Note>> getAllNotes();
 
-        LiveData<List<Note>> getSearchedNotes(String query);
+        LiveData<List<Note>> filterNotes(String query, List<Note> list);
     }
 }

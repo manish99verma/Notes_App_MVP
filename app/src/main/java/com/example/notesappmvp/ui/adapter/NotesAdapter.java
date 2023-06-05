@@ -1,6 +1,7 @@
 package com.example.notesappmvp.ui.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -92,7 +93,9 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
             mBinding.txtDate.setText(note.getDate());
 
             //Click
-            mBinding.backgroundCard.setOnClickListener(v -> clickEvent.onClick(note));
+            mBinding.backgroundCard.setOnClickListener(v -> {
+                clickEvent.onClick(note);
+            });
         }
     }
 

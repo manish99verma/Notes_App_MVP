@@ -48,7 +48,6 @@ public class EditNoteActivity extends AppCompatActivity {
         binding.saveBtn.setOnClickListener(v -> saveNote());
 
         binding.deleteBtn.setOnClickListener(v -> ShowDeleteDialog());
-
     }
 
     private void ShowDeleteDialog() {
