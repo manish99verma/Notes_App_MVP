@@ -1,4 +1,4 @@
-package com.example.notesappmvp.data.data_source;
+package com.example.notesappmvp.data.data_source.local;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
@@ -19,5 +19,8 @@ public interface NotesDao {
 
     @Query("SELECT * FROM note_table ORDER BY id DESC")
     LiveData<List<Note>> getAllNotes();
+
+    @Query("SELECT * FROM note_table ORDER BY id DESC")
+    List<Note> syncedGetAllNotes();
 
 }

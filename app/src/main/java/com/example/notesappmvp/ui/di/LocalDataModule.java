@@ -2,9 +2,9 @@ package com.example.notesappmvp.ui.di;
 
 import android.app.Application;
 
-import com.example.notesappmvp.data.data_source.NotesDatabase;
-import com.example.notesappmvp.data.data_source.NotesLocalDataSource;
-import com.example.notesappmvp.data.data_source.NotesLocalDataSourceImpl;
+import com.example.notesappmvp.data.data_source.local.NotesDatabase;
+import com.example.notesappmvp.data.data_source.local.NotesLocalDataSource;
+import com.example.notesappmvp.data.data_source.local.NotesLocalDataSourceImpl;
 
 import javax.inject.Singleton;
 

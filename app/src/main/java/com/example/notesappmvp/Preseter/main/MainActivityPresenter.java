@@ -9,6 +9,7 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.example.notesappmvp.data.model.Note;
 import com.example.notesappmvp.data.repository.NotesRepository;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -56,5 +57,15 @@ public class MainActivityPresenter implements MainActivityContact.Presenter {
 
 
         return liveData;
+    }
+
+    @Override
+    public void setNewUser(FirebaseUser user) {
+        notesRepository.setCurrentUser(user);
+    }
+
+    @Override
+    public void newLogin(FirebaseUser user) {
+        notesRepository.newLogin(user);
     }
 }

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/main_bg"
-    tools:context=".ui.main.MainActivity">
+    tools:context=".ui.activity.MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/toolbar_layout"
@@ -27,6 +27,20 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/login_btn"
+            style="@style/btn_card"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toStartOf="@id/search_btn"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                style="@style/btn_image"
+                android:padding="1dp"
+                android:src="@drawable/ic_sync" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
             android:id="@+id/search_btn"
             style="@style/btn_card"
             android:layout_marginTop="16dp"
@@ -38,6 +52,7 @@
                 style="@style/btn_image"
                 android:src="@drawable/ic_search" />
         </androidx.cardview.widget.CardView>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
@@ -83,9 +98,9 @@
             android:src="@drawable/ic_empty" />
 
         <TextView
+            android:id="@+id/txt_not_found"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/txt_not_found"
             android:text="@string/msg_no_notes"
             android:textColor="@color/empty_notes_text"
             android:textSize="20sp" />
@@ -96,13 +111,13 @@
         android:id="@+id/search_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:iconifiedByDefault="false"
-        android:searchHintIcon="@null"
         android:layout_marginHorizontal="16dp"
+        android:iconifiedByDefault="false"
         android:paddingHorizontal="2dp"
+        android:queryHint="Enter title/message/date..."
+        android:searchHintIcon="@null"
         android:searchIcon="@null"
         android:visibility="invisible"
-        android:queryHint="Enter title/message/date..."
         app:layout_constraintBottom_toBottomOf="@+id/toolbar_layout"
         app:layout_constraintEnd_toEndOf="@+id/toolbar_layout"
         app:layout_constraintStart_toStartOf="@+id/toolbar_layout"

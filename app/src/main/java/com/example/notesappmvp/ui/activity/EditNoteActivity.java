@@ -1,4 +1,4 @@
-package com.example.notesappmvp.ui.editor;
+package com.example.notesappmvp.ui.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -71,20 +71,18 @@ public class EditNoteActivity extends AppCompatActivity {
         binding.deleteBtn.setVisibility(View.VISIBLE);
     }
 
-//    private void saveFakeNotes() {
-//        List<Note> notes = new ArrayList<>();
-//        notes.add(new Note("How to make your personal brand stand out online", getCurrentDate(), "This is just empty Now."));
-//        notes.add(new Note("Beautiful weather app UI concepts we wish existed", getCurrentDate(), "This is just empty Now."));
-//        notes.add(new Note("10 excellent font pairing tools for designers", getCurrentDate(), "This is just empty Now."));
-//        notes.add(new Note("Spotify's Reema Bhagat on product design, music, and the key to a happy career", getCurrentDate(), "This is just empty Now."));
-//        notes.add(new Note("12 eye-catching mobile wallpaper", getCurrentDate(), "This is just empty Now."));
-//
-//        for (Note note : notes) {
-//            presenter.saveNote(note, id -> {
-//
-//            });
-//        }
-//    }
+    private void saveFakeNotes() {
+        List<Note> notes = new ArrayList<>();
+        notes.add(new Note("How to make your personal brand stand out online", getCurrentDate(), "This is just empty Now."));
+        notes.add(new Note("Beautiful weather app UI concepts we wish existed", getCurrentDate(), "This is just empty Now."));
+        notes.add(new Note("10 excellent font pairing tools for designers", getCurrentDate(), "This is just empty Now."));
+        notes.add(new Note("Spotify's Reema Bhagat on product design, music, and the key to a happy career", getCurrentDate(), "This is just empty Now."));
+        notes.add(new Note("12 eye-catching mobile wallpaper", getCurrentDate(), "This is just empty Now."));
+
+        for (Note note : notes) {
+            presenter.saveNote(note, id -> {});
+        }
+    }
 
     private void saveNote() {
         hideKeyboard(EditNoteActivity.this);

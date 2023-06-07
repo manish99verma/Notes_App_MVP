@@ -2,4 +2,6 @@
     <string name="app_name">Notes App MVP</string>
     <string name="msg_no_notes">You will see your future notes here</string>
     <string name="msg_no_matches">No matches</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="client_id">268775665022-n2trfgp398c9jm13p95j4r22d8uercdp.apps.googleusercontent.com</string>
 </resources>

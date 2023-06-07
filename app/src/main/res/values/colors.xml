@@ -12,6 +12,8 @@
     <color name="btn_bg">#302E2E</color>
     <color name="date_txt_color">#292727</color>
 
+    <color name="app_logo_bg">#33EBE8</color>
+
     <color name="empty_notes_text">#B2AFAF</color>
 
     <color name="note_bg_color_1">#FE9A37</color>

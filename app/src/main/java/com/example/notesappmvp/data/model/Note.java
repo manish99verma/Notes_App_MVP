@@ -1,6 +1,7 @@
 package com.example.notesappmvp.data.model;
 
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 import com.google.gson.annotations.SerializedName;
@@ -13,6 +14,9 @@ public class Note implements Serializable {
     @SerializedName("id")
     private int id;
 
+    @SerializedName("firebase_id")
+    private String firebase_id;
+
     @SerializedName("title")
     private String title;
 
@@ -22,6 +26,14 @@ public class Note implements Serializable {
     @SerializedName("msg")
     private String msg;
 
+    public Note(String firebase_id, String title, String date, String msg) {
+        this.firebase_id = firebase_id;
+        this.title = title;
+        this.date = date;
+        this.msg = msg;
+    }
+
+    @Ignore
     public Note(String title, String date, String msg) {
         this.title = title;
         this.date = date;
@@ -54,5 +66,13 @@ public class Note implements Serializable {
 
     public void setMsg(String msg) {
         this.msg = msg;
+    }
+
+    public String getFirebase_id() {
+        return firebase_id;
+    }
+
+    public void setFirebase_id(String firebase_id) {
+        this.firebase_id = firebase_id;
     }
 }

@@ -1,6 +1,7 @@
 package com.example.notesappmvp.ui.adapter;
 
 import android.content.Context;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -16,6 +17,7 @@ import com.example.notesappmvp.data.model.Note;
 import com.example.notesappmvp.databinding.NoteViewItemBinding;
 
 import java.util.List;
+import java.util.Objects;
 
 public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder> {
     Context context;
@@ -41,7 +43,10 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
                 @NonNull Note oldNote, @NonNull Note newNote) {
             // NOTE: if you use equals, your object must properly override Object#equals()
             // Incorrectly returning false here will result in too many animations.
-            return oldNote.getId() == newNote.getId();
+            boolean output = oldNote.getTitle().equals(newNote.getTitle());
+            output = output && oldNote.getMsg().equals(newNote.getMsg());
+
+            return output && TextUtils.equals(oldNote.getFirebase_id(), newNote.getFirebase_id());
         }
     };
 

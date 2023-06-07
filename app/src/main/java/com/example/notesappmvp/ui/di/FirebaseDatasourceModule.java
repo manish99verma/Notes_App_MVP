@@ -2,8 +2,7 @@ package com.example.notesappmvp.ui.di;
 
 import com.example.notesappmvp.data.data_source.local.NotesLocalDataSource;
 import com.example.notesappmvp.data.data_source.web.FirebaseDataSource;
-import com.example.notesappmvp.data.repository.NotesRepository;
-import com.example.notesappmvp.data.repository.NotesRepositoryImpl;
+import com.example.notesappmvp.data.data_source.web.FirebaseDataSourceImpl;
 
 import javax.inject.Singleton;
 
@@ -14,11 +13,10 @@ import dagger.hilt.components.SingletonComponent;
 
 @Module
 @InstallIn(SingletonComponent.class)
-public class RepositoryModule {
+public class FirebaseDatasourceModule {
     @Provides
     @Singleton
-    NotesRepository provideNotesRepository(NotesLocalDataSource notesLocalDataSource, FirebaseDataSource firebaseDataSource) {
-        return new NotesRepositoryImpl(notesLocalDataSource, firebaseDataSource);
+    FirebaseDataSource provideFirebaseDataSourceModule(NotesLocalDataSource localDataSource) {
+        return new FirebaseDataSourceImpl(localDataSource);
     }
-
 }

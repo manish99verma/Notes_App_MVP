@@ -1,4 +1,4 @@
-package com.example.notesappmvp.data.data_source;
+package com.example.notesappmvp.data.data_source.local;
 
 import androidx.lifecycle.LiveData;
 
@@ -13,4 +13,6 @@ public interface NotesLocalDataSource {
     void deleteNote(Note note);
 
     LiveData<List<Note>> getAllNotes();
+
+    List<Note> synced_getAllNotes();
 }

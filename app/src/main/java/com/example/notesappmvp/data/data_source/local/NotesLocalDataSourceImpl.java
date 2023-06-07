@@ -1,4 +1,4 @@
-package com.example.notesappmvp.data.data_source;
+package com.example.notesappmvp.data.data_source.local;
 
 import androidx.lifecycle.LiveData;
 
@@ -16,7 +16,12 @@ public class NotesLocalDataSourceImpl implements NotesLocalDataSource {
 
     @Override
     public void saveNote(Note note, NotesRepository.OnNoteSavedEvent event) {
-        NotesDatabase.databaseWriteExecutor.execute(() -> event.onNoteSaved(notesDao.saveNote(note)));
+        NotesDatabase.databaseWriteExecutor.execute(() ->
+        {
+            long result = notesDao.saveNote(note);
+            if (event != null)
+                event.onNoteSaved(result);
+        });
     }
 
     @Override
@@ -27,5 +32,10 @@ public class NotesLocalDataSourceImpl implements NotesLocalDataSource {
     @Override
     public LiveData<List<Note>> getAllNotes() {
         return notesDao.getAllNotes();
+    }
+
+    @Override
+    public List<Note> synced_getAllNotes() {
+        return notesDao.syncedGetAllNotes();
     }
 }
