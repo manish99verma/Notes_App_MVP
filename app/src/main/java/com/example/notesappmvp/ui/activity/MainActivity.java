@@ -151,6 +151,7 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onActivityResult(ActivityResult result) {
                     loadingDialog.dismiss();
+                    Log.d("TAGY", "onActivityResult: Result Received: "+result.toString());
 
                     if (result.getResultCode() == Activity.RESULT_OK) {
                         // There are no request codes
@@ -166,6 +167,8 @@ public class MainActivity extends AppCompatActivity {
                         } catch (ApiException e) {
                             // Google Sign In failed, update UI appropriately
                             Log.w("TAG", "Google sign in failed", e);
+                            Toast.makeText(MainActivity.this, e.getLocalizedMessage(), Toast.LENGTH_SHORT)
+                                    .show();
                         }
 
                     }
@@ -187,6 +190,9 @@ public class MainActivity extends AppCompatActivity {
                     } else {
                         // If sign in fails, display a message to the user.
                         Log.w("TAG", "signInWithCredential:failure", task.getException());
+                        Toast.makeText(MainActivity.this, task.getException().getLocalizedMessage(), Toast.LENGTH_SHORT)
+                                .show();
+                        task.getException().printStackTrace();
                         updateUI(null);
                     }
                 });
