@@ -6,7 +6,7 @@ Save your favorite notes and sync anywhere with google account.
 
 ## Features
 
-- Sooth UI
+- Smooth UI
 - Login with existing google account
 - Cloud sync
 - Also works offline 
