@@ -38,6 +38,7 @@ Screenshots
 - **Local Storage**: SQLite Database
 - **Cloud Storage**: Firebase Storage
 - **Search Algorithm**: Trie
+- **Architecture pattern**: MVP
 
 ## Installation
 
